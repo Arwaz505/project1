@@ -1,0 +1,21 @@
+<h2>Show Book Details</h2>
+<form action="/show" method="POST">
+    <label for="title">Enter Book Title:</label>
+    <input type="text" name="title" id="title" placeholder="Enter book title" required>
+    <button type="submit">Show Details</button>
+</form>
+
+{{#if book}}
+    <div class="book-details">
+        <h3>Book Details</h3>
+        <p><strong>Title:</strong> {{book.title}}</p>
+        <p><strong>Author:</strong> {{book.author}}</p>
+        <p><strong>Theme:</strong> {{book.theme}}</p>
+        <p><strong>Writer:</strong> {{book.writer}}</p>
+        <p><strong>Publish Year:</strong> {{book.year}}</p>
+        <p><strong>Publishing Company:</strong> {{book.company}}</p>
+    </div>
+{{else}}
+    <p class="error">No book found with the entered title.</p>
+{{/if}}
+<a href="/">Back to Home</a>
